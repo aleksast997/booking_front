@@ -1,0 +1,20 @@
+.event_detail {
+  width: 100%;
+  height: max-content;
+  background-image: linear-gradient(240deg, rgba(128, 0, 128, 0.95), rgba(0, 64, 128, 0.8));
+  border-radius: 1%;
+}
+
+.border-2 {
+  border-width: 2px!important;
+  border-style: solid!important;
+  border-color: transparent;
+}
+
+
+.bgc-white {
+  background-color: #fff!important;
+}
+
+
+

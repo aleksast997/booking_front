@@ -1,0 +1,106 @@
+<div class="event_detail border-2 bgc-white w-100 shadow-sm" style="margin-top: 23px;">
+  <div class="row">
+
+    <!--Edit form-->
+    <form #editForm="ngForm" (ngSubmit)="onSubmit(editForm)" style="padding: 35px;">
+      <div class="col-ms-12"
+        style=" padding-bottom:10px;  font-size: x-large; color: aliceblue;">
+        <div class="row" style="margin-top: 20px;">
+          <div class="col-md-4" style="margin-left: 15px;">Event name:</div>
+          <div class="col-md-7" style="padding: 0;">
+            <input type="text" class="form-control" id="event_name" name="event_name" ngModel value="{{myEvent.name}}" placeholder="{{myEvent.name}}">
+          </div>
+        </div>
+      </div>
+      <div class="col-ms-12"
+        style=" padding-bottom:10px;  font-size: x-large; color: aliceblue;">
+        <div class="row" style="margin-top: 20px;">
+          <div class="col-md-4" style="margin-left: 15px;">Description:</div>
+          <div class="col-md-7" style="padding: 0;">
+            <input type="text" class="form-control" id="event_description" name="event_description" ngModel value="{{myEvent.description}}" placeholder="{{myEvent.description}}">
+          </div>
+        </div>
+      </div>
+      <div class="col-ms-12"
+        style=" padding-bottom:10px;  font-size: x-large; color: aliceblue;">
+        <div class="row" style="margin-top: 20px;">
+          <div class="col-md-4" style="margin-left: 15px;">Date of event:</div>
+          <div class="col-md-7" style="padding: 0;">
+            <input type="text"
+            class="form-control"
+            name="event_date"
+            id="event_date"
+            ngModel
+            value="{{myEvent.date | date: 'dd/MM/yyyy'}}"
+            onfocus="(this.type='date')"
+            onblur="(this.type='text')"
+            placeholder="{{myEvent.date | date: 'dd/MM/yyyy'}}">
+          </div>
+        </div>
+      </div>
+      <div class="col-ms-12"
+      style=" padding-bottom:10px;  font-size: x-large; color: aliceblue;">
+        <div class="form-group row" style="margin-left: 0px; margin-top: 20px;">
+          <div class="col-md-4" style="margin-left: 2px;">Type of event</div>
+          <div class="col-md-7" style="padding: 0; margin-left: 5px;">
+            <select class="form-select" id="event_type" name="event_type" ngModel>
+              <option *ngFor="let type of eventTypes" [ngValue]="type" [selected]="type.name==myEvent.eventType.name">
+                {{type.name}}
+              </option>
+          </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12" style="padding: 5px; margin-top: 35px; display: flex; justify-content: center; align-items: center;">
+        <button type="submit" class="btn btn-primary" style="align-self: center; width: 50%; background-color: rgba(121, 27, 137, 0.7); border-width: 0;">Update</button>
+      </div>
+
+    </form>
+
+
+    <!--Samo prikaz-->
+    <div class="col"
+      style="text-align: start; font-size: larger; color: aliceblue; padding-left: 30px; padding-bottom: 15px; margin-top: 0px;">
+      Ticket options:
+    </div>
+    <div class="col-ms-12" style="padding-left: 35px; padding-right: 35px; padding-bottom: 20px; padding-top: 10px;">
+      <ol class="list-group">
+        <a class="list-group-item d-flex justify-content-between align-items-start" style="cursor: pointer; width: 100%; background-color: rgba(241, 194, 241, 0.7); "
+        *ngFor="let item of myEvent.ticketsCategory" >
+          <div class="ms-2 me-auto">
+            <div class="fw-bold">
+              {{item.name}}
+            </div>
+            {{item.description}}
+          </div>
+          <div style="margin-right: 50px; color: aliceblue; font-size: medium; font-weight: bolder;">Price: {{item.price}} RSD</div>
+          <div style="color: darkblue; padding-right: 5px; font-size: medium; font-weight: bold;">Seats left</div>
+          <span class="badge rounded-pill" style="background-color: darkblue;">{{item.maxSeats-item.occupiedSeats}}</span>
+        </a>
+      </ol>
+    </div>
+
+
+    <!--<div class="col-7" style="padding-left:25px; padding-bottom: 15px;">
+      <label style="color: aliceblue; font-size: larger; font-weight: 600; padding-bottom: 10px;">Selected seats: </label>
+      <label style="color: aliceblue; font-size: larger; font-weight: 600; padding-bottom: 5px;">How many tickets:</label>
+      <input type="number" id="amount" class="form-control" value="1" #amountInput>
+    </div>
+    <div class="col-4" style="padding-top: 30px;">
+      <button class="btn btn-primary"  style="width: 80%; background-color: rgba(121, 27, 137, 0.7); border-width: 0;">Calculate</button>
+      <label style="color: aliceblue; font-size: larger; font-weight: 600; padding-top: 10px; padding-left: 5px;">Your total:</label>
+    </div>-->
+
+
+
+
+
+
+
+  </div>
+</div>
+
+<div *ngIf="errorOcured" class="alert alert-danger" role="alert">
+  {{error}}
+</div>

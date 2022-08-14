@@ -1,0 +1,9 @@
+<div class="row" style="margin-left: 25px;">
+  <div class="list-group">
+    <app-bookings-item
+    *ngFor="let bookingEl of bookings; let i = index"
+    [booking] = "bookingEl"
+    [index] = "i"></app-bookings-item>
+    <!--<div *ngFor="let item of bookings; let i = index">{{item.TicketsCategory.name}} </div>-->
+  </div>
+</div>

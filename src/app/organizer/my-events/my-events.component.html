@@ -1,0 +1,28 @@
+
+<app-organizer-header></app-organizer-header>
+<div class="home">
+  <div class="row">
+    <div class="col-6" style="margin-left: 55px; margin-bottom: 10px; padding-top: 20px; color: darkblue;">
+      <h2 >My Events</h2>
+    </div>
+    <div class="col-5" style="margin-left: 0; margin-bottom: 10px; padding-top: 20px; padding-left: 0 !important; color: darkblue;">
+      <h2>Details</h2>
+    </div>
+    <div class="col-6"><app-my-events-list></app-my-events-list></div>
+    <div class="col-5" style="margin-left: 35px;"><router-outlet></router-outlet></div>
+  </div>
+</div>
+
+
+
+
+
+
+<!--<div class="row">
+  <div class="list-group"><br>
+    <app-my-events-item
+    *ngFor="let myEventEl of myEvents; let i = index"
+    [event]="myEventEl"
+    [index]="i"></app-my-events-item>
+  </div>
+</div>-->

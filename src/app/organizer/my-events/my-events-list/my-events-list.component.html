@@ -1,0 +1,10 @@
+<div class="row" style="margin-left: 50px;">
+  <div class="list-group"><br>
+    <app-my-events-item
+    *ngFor="let myEventEl of myEvents; let i = index"
+    [event] = "myEventEl"
+    [index] = "i"
+    style="margin-bottom: 50px;"
+    ></app-my-events-item>
+  </div>
+</div>

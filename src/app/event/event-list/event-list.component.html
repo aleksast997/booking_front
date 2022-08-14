@@ -1,0 +1,8 @@
+<div class="row">
+  <div class="list-group">
+    <app-event-item
+    *ngFor="let eventEl of events; let i = index"
+    [event]="eventEl"
+    [index]="i"></app-event-item>
+  </div>
+</div>

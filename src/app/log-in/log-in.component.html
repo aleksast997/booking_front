@@ -1,0 +1,29 @@
+<div style="height: 100vh; background-color: rgba(241, 194, 241, 0.7);">
+  <div class="center">
+    <div class="container">
+      <div class="" style="display: block; justify-content: center;">
+        <div class="col float-center" style="justify-content: center;">
+          <h3 style="color: aliceblue; margin-bottom: 10px; width: 100%; justify-content: center;">Login</h3>
+          <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)">
+            <div class="row">
+              <div class="form-control">
+                <input type="text" class="my-input" id="email" name="email" ngModel required  placeholder="Email">
+              </div>
+            </div>
+            <div class="row">
+              <div class="form-control">
+                <input type="password" class="my-input" id="password" name="password" ngModel required placeholder="Password">
+              </div>
+            </div>
+            <div class="col" style="margin-top: 5px; width: 100%;">
+              <button type="submit" [disabled]="!loginForm.valid" class="my-input" style="background-color: rgba(241, 194, 241, 0.7); width: 100%; font-weight: bold; color:aliceblue">Log In</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="alert alert-danger" *ngIf="error">
+      {{error}}
+    </div>
+  </div>
+</div>
